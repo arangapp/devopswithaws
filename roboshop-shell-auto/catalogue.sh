@@ -20,11 +20,15 @@ cd /app &>>/tmp/roboshop.log
 unzip /tmp/catalogue.zip &>>/tmp/roboshop.log &>>/tmp/roboshop.log
 
 echo -e "\e[33m download the dependencies \e[0m"
-cd /app &>>/tmp/roboshop.log &>>/tmp/roboshop.log
-npm install &>>/tmp/roboshop.log &>>/tmp/roboshop.log
+cd /app &>>/tmp/roboshop.log
+npm install &>>/tmp/roboshop.log
 
 echo -e "\e[33m copy the catalog service and update \e[0m"
-cp catalogue.service /etc/systemd/system/catalogue.service &>>/tmp/roboshop.log &>>/tmp/roboshop.log
+cp catalogue.service /etc/systemd/system/catalogue.service &>>/tmp/roboshop.log
+
+echo -e "\e[33m Setup the MongoDB repo file \e[0m"
+cp mongo.repo /etc/yum.repos.d/mongo.repo &>>/tmp/roboshop.log
+yum install mongodb-org-shell -y &>>/tmp/roboshop.log
 
 echo -e "\e[33m Load the service \e[0m"
 systemctl daemon-reload &>>/tmp/roboshop.log
@@ -33,6 +37,3 @@ echo -e "\e[33m Start the service \e[0m"
 systemctl enable catalogue &>>/tmp/roboshop.log
 systemctl restart catalogue &>>/tmp/roboshop.log
 
-echo -e "\e[33m Setup the MongoDB repo file \e[0m"
-cp mongo.repo /etc/yum.repos.d/mongo.repo &>>/tmp/roboshop.log
-yum install mongodb-org-shell -y &>>/tmp/roboshop.log

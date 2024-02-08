@@ -15,7 +15,7 @@ create directory &>>/tmp/roboshop.log
 mkdir /app &>>/tmp/roboshop.log
 
 echo -e "\e[33m Download application code \e[0m"
- curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>/tmp/roboshop.log
+ curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip  &>>/tmp/roboshop.log
  cd /app &>>/tmp/roboshop.log
  unzip /tmp/catalogue.zip &>>/tmp/roboshop.log
 

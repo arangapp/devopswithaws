@@ -16,7 +16,7 @@ echo -e "\e[33m Create Nginx Reverse Proxy Configuration \e[0m"
 ## we need to copy config file
 
 echo -e "\e[33m update frontend config \e[0m"
-cp roboshop.confif /etc/nginx/default.d/roboshop.conf &>>/tmp/roboshop.log
+cp roboshop.config /etc/nginx/default.d/roboshop.conf &>>/tmp/roboshop.log
 
 echo -e "\e[33m restart & Enable Nginx service \e[0m"
 systemctl enable nginx &>>/tmp/roboshop.log

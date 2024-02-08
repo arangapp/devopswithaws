@@ -27,12 +27,12 @@ echo -e "\e[33m copy the catalog service and update \e[0m"
 cp catalogue.service /etc/systemd/system/catalogue.service &>>/tmp/roboshop.log &>>/tmp/roboshop.log
 
 echo -e "\e[33m Load the service \e[0m"
-systemctl daemon-reload &>>/tmp/roboshop.log &>>/tmp/roboshop.log
+systemctl daemon-reload &>>/tmp/roboshop.log
 
 echo -e "\e[33m Start the service \e[0m"
 systemctl enable catalogue &>>/tmp/roboshop.log
 systemctl restart catalogue &>>/tmp/roboshop.log
 
 echo -e "\e[33m Setup the MongoDB repo file \e[0m"
-cp mongo.repo /etc/yum.repos.d/mongo.repo &>>/tmp/roboshop.log &>>/tmp/roboshop.log
-yum install mongodb-org-shell -y &>>/tmp/roboshop.log &>>/tmp/roboshop.log
+cp mongo.repo /etc/yum.repos.d/mongo.repo &>>/tmp/roboshop.log
+yum install mongodb-org-shell -y &>>/tmp/roboshop.log
